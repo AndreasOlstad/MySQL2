@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Bibliotek System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Bibliotek</h1>
+      <button id="darkModeToggle" class="mode-toggle">Mørk Modus</button>
+    </header>
+
+    <section class="form-section">
+      <h2>Legg til ny bok</h2>
+      <form id="bookForm">
+        <input type="text" id="title" placeholder="Tittel" required>
+        <input type="text" id="author" placeholder="Forfatter" required>
+        <input type="text" id="genre" placeholder="Sjanger">
+        <button type="submit">Legg til bok</button>
+      </form>
+    </section>
+
+    <section class="message" id="message"></section>
+
+    <section class="book-list">
+      <h2>Bøker i biblioteket</h2>
+      <table id="bookTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tittel</th>
+            <th>Forfatter</th>
+            <th>Sjanger</th>
+            <th>Status</th>
+            <th>Handling</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="edit-form-section">
+      <h2>Rediger Bok</h2>
+      <form id="editBookForm" style="display: none;">
+        <input type="text" id="editTitle" placeholder="Ny Tittel" required>
+        <input type="text" id="editAuthor" placeholder="Ny Forfatter" required>
+        <input type="text" id="editGenre" placeholder="Ny Sjanger">
+        <button type="submit">Oppdater Bok</button>
+      </form>
+    </section>
+
+    <footer>
+      <button id="increaseFontButton" class="font-size-btn">A+</button>
+      <button id="decreaseFontButton" class="font-size-btn">A-</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
