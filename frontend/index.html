@@ -2,62 +2,88 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8">
-  <title>Bibliotek System</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bokadministrasjon</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Bibliotek</h1>
-      <button id="darkModeToggle" class="mode-toggle">Mørk Modus</button>
-    </header>
 
-    <section class="form-section">
-      <h2>Legg til ny bok</h2>
-      <form id="bookForm">
-        <input type="text" id="title" placeholder="Tittel" required>
-        <input type="text" id="author" placeholder="Forfatter" required>
-        <input type="text" id="genre" placeholder="Sjanger">
-        <button type="submit">Legg til bok</button>
-      </form>
-    </section>
+  <h1>Bokadministrasjon</h1>
+  
+  <!-- Melding -->
+  <div id="message"></div>
 
-    <section class="message" id="message"></section>
+  <!-- Skjema for å legge til bok -->
+  <h2>Legg til Bok</h2>
+  <form id="bookForm">
+    <label for="title">Tittel:</label>
+    <input type="text" id="title" required><br><br>
+    
+    <label for="author">Forfatter:</label>
+    <input type="text" id="author" required><br><br>
+    
+    <label for="genre">Sjanger:</label>
+    <input type="text" id="genre" required><br><br>
 
-    <section class="book-list">
-      <h2>Bøker i biblioteket</h2>
-      <table id="bookTable">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Tittel</th>
-            <th>Forfatter</th>
-            <th>Sjanger</th>
-            <th>Status</th>
-            <th>Handling</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </section>
+    <label for="status">Status:</label>
+    <select id="status">
+      <option value="Tilgjengelig">Tilgjengelig</option>
+      <option value="Utlånt">Utlånt</option>
+    </select><br><br>
 
-    <section class="edit-form-section">
-      <h2>Rediger Bok</h2>
-      <form id="editBookForm" style="display: none;">
-        <input type="text" id="editTitle" placeholder="Ny Tittel" required>
-        <input type="text" id="editAuthor" placeholder="Ny Forfatter" required>
-        <input type="text" id="editGenre" placeholder="Ny Sjanger">
-        <button type="submit">Oppdater Bok</button>
-      </form>
-    </section>
+    <button type="submit">Legg til bok</button>
+  </form>
 
-    <footer>
-      <button id="increaseFontButton" class="font-size-btn">A+</button>
-      <button id="decreaseFontButton" class="font-size-btn">A-</button>
-    </footer>
-  </div>
+  <hr>
+
+  <!-- Tabell for å vise bøker -->
+  <h2>Bøker</h2>
+  <table id="bookTable" border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tittel</th>
+        <th>Forfatter</th>
+        <th>Sjanger</th>
+        <th>Status</th>
+        <th>Handlinger</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Bøker vises her -->
+    </tbody>
+  </table>
+
+  <!-- Skjema for å redigere bok -->
+  <h2>Rediger Bok</h2>
+  <form id="editBookForm" style="display: none;">
+    <label for="editTitle">Tittel:</label>
+    <input type="text" id="editTitle" required><br><br>
+    
+    <label for="editAuthor">Forfatter:</label>
+    <input type="text" id="editAuthor" required><br><br>
+    
+    <label for="editGenre">Sjanger:</label>
+    <input type="text" id="editGenre" required><br><br>
+
+    <label for="editStatus">Status:</label>
+    <select id="editStatus">
+      <option value="Tilgjengelig">Tilgjengelig</option>
+      <option value="Utlånt">Utlånt</option>
+    </select><br><br>
+
+    <button type="submit">Oppdater bok</button>
+  </form>
+
+  <hr>
+
+  <!-- Knapper for mørk modus og fontstørrelse -->
+  <button id="darkModeToggle">Mørk modus</button>
+  <br><br>
+  <button id="increaseFontButton">Øk fontstørrelse</button>
+  <button id="decreaseFontButton">Reduser fontstørrelse</button>
 
   <script src="script.js"></script>
+
 </body>
 </html>

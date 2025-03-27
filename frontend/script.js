@@ -80,6 +80,7 @@ function editBook(id) {
       document.getElementById('editTitle').value = book.title;
       document.getElementById('editAuthor').value = book.author;
       document.getElementById('editGenre').value = book.genre;
+      document.getElementById('editStatus').value = book.status; // Hent status
       editBookId = book.id;
       document.getElementById('editBookForm').style.display = 'block';
     });
@@ -91,8 +92,9 @@ document.getElementById('editBookForm').addEventListener('submit', function (e) 
   const title = document.getElementById('editTitle').value;
   const author = document.getElementById('editAuthor').value;
   const genre = document.getElementById('editGenre').value;
+  const status = document.getElementById('editStatus').value; // Hent status fra skjemaet
 
-  const updatedBookData = { title, author, genre };
+  const updatedBookData = { title, author, genre, status };
 
   fetch(`http://localhost:3000/api/books/${editBookId}`, {
     method: 'PUT',
